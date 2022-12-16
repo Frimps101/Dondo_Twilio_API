@@ -1,0 +1,29 @@
+body{
+    /* background-color: #833ab4; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 8%;
+}
+
+.left, .right{
+    flex: 1;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+h1{
+    font-size: 3rem !important;
+    font-weight: bold;
+    text-align: center;
+}
+
+form{
+    width: 80%;
+}

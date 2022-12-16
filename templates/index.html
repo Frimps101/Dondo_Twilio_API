@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="left">
+  <h1 class="title">Dondo Messengr</h1>
+{% for flash_message in get_flashed_messages() %}
+    <div class="flash">{{ flash_message }}</div>
+{% endfor %}
+
+<h3> Recent Messages </h3>
+<div class="content">
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message.body }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+</div>
+
+<div class="right">
+  <h2> Send a Message </h2>
+
+<form method="post" action="/add-message" class="main-form" id="message-form">
+  <div class="mb-3">
+    <label for="to" class="form-label">Number to Message</label>
+    <input type="tel" placeholder="+15550123456" class="form-control" aria-describedby="emailHelp" name="to">
+    <div id="emailHelp" class="form-text">We'll never share your number with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="sender" class="form-label">Your Name</label>
+    <input type="text" class="form-control" placeholder="Jo" name="sender">
+  </div>
+  <div class="mb-3">
+    <label for="recipient" class="form-label">Recipient</label>
+    <input type="text" class="form-control" placeholder="Max" name="recipient">
+  </div>
+  <div class="mb-3">
+    <label for="msg" class="form-label">Message</label>
+    <input type="text" class="form-control" placeholder="Message" name="message">
+    <!-- <textarea row="12" placeholder="Enter Message Here"></textarea> -->
+  </div>
+  <button type="submit" class="btn btn-primary">Send Message</button>
+</form>
+</div>
+{% endblock content%}
